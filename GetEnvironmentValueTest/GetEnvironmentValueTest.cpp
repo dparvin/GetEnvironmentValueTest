@@ -33,13 +33,19 @@ int main()
 		}
 		else
 		{
+			/*******************************************************************/
+			/* Actual code doing testing for problem                           */
+			/*******************************************************************/
 			CString szEnvironmentStrings = GetEnvironmentStringsList();
+			wprintf(L"All Environment Variables:\n %s\n\n", szEnvironmentStrings.GetString());
+
 			CString szValue;
 			BOOL found = szValue.GetEnvironmentVariable(L"SESSIONNAME");
-			wprintf(L"All Environment Variables:\n %s\n\n", szEnvironmentStrings.GetString());
+
 			wprintf(found ? L"Environment Variable was found\n" : L"Environment Variable not was found\n");
 			wprintf(L"Environment Variable 'SESSIONNAME' = '%s'\n", szValue.GetString());
 
+			/*******************************************************************/
 		}
 	}
 	else
